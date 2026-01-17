@@ -1,70 +1,99 @@
-# C++ Habit Tracker
+🧠 Habit Tracker (C++ CLI Application)
 
-## Overview
-C++ Habit Tracker is a command-line application that helps users build and maintain daily habits.  
-Users can add habits, mark them as completed for the current day, and track streaks across days.  
-The application is designed with a clean CLI interface and structured logic, focusing on correctness and usability.
+A clean and user-friendly command-line Habit Tracker built using C++.
+This application helps users build consistency by tracking daily habits, maintaining streaks, and saving progress persistently.
 
----
+This is a real, functional C++ project, not just a practice program.
 
-## Features (Implemented)
-- Add new habits with custom names
-- Mark a habit as completed for today
-- Track streak count for each habit
-- View all habits with:
-  - Habit name
-  - Current streak
-  - Last completed date
-- View habits **not completed today**
-- Input validation for menu and habit selection
-- Clear, formatted CLI output for better readability
+🚀 Features
 
----
+➕ Add new habits (empty names are prevented)
 
-## Features (In Progress)
-- Save habit data to a file
-- Load habit data automatically on program start
+✅ Mark habits as completed for today
 
----
+🔥 Automatically maintain streaks
 
-## Tech Stack
-- C++
-- STL (`vector`, `string`)
-- File I/O (planned)
-- `<ctime>` for system date handling
-- `<iomanip>` for formatted console output
+👀 View all habits with streaks and last completion date
 
----
+⏳ View habits not completed today
 
-## How It Works (Brief)
-- Habits are stored in memory using a `vector` of custom `Habit` objects
-- Each habit maintains:
-  - Name
-  - Current streak
-  - Last completed date (`YYYY-MM-DD`)
-- The system date is fetched automatically (no manual date input)
-- Streaks update only when a habit is marked once per day
+🗑️ Delete existing habits
 
----
+💾 Save habits to file
 
-## Project Status
-🟡 **In Progress**  
-(Core functionality completed, persistence coming next)
+🔁 Load habits automatically on program start
 
----
+🎨 Colored CLI interface for better user experience
 
-## Planned Improvements
-- Persistent storage using file save/load
-- Improved streak logic (missed-day reset)
-- Prevent empty habit names
-- Minor UI refinements
+🧠 How Streaks Work
 
----
+If a habit was completed today or yesterday, the streak continues
 
-## Why This Project
-This project was built to practice:
-- Object-oriented design in C++
-- STL usage
-- Real-world input handling
-- Time/date handling
-- Writing maintainable, readable CLI applications
+If a habit was missed for more than one day, the streak resets to 0
+
+Streak correction is handled safely during program load
+
+This ensures streaks always reflect real progress.
+
+🗂️ Data Storage
+
+Habit data is stored in a simple text file named:
+
+habits.txt
+
+
+Each habit is saved in the following format:
+
+habit_name|streak|last_done_date
+
+Example
+Workout|5|04-02-2026
+Reading|2|03-02-2026
+
+
+📌 This file is automatically created when you choose the Save option in the program.
+You do not need to create or edit it manually.
+
+🛠️ Tech Stack & Concepts Used
+
+Language: C++
+
+Standard Libraries:
+
+vector
+
+string
+
+fstream
+
+sstream
+
+ctime
+
+Concepts Used:
+
+Classes & objects
+
+File handling (save & load)
+
+Date & time handling using system clock
+
+Input validation
+
+Edge case handling
+
+ANSI escape codes for colored CLI output
+
+▶️ How to Run the Project
+Compile the program
+g++ habit_tracker.cpp -o habit_tracker
+
+Run the executable
+./habit_tracker
+
+
+💡 Recommended: Use a modern terminal (Linux / macOS / Windows Terminal) for proper color support.
+
+📌 Project Status
+
+✅ Completed
